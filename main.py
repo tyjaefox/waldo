@@ -990,7 +990,7 @@ def stream_evaluation(process_id):
                     if not ret:
                         break
 
-                    # Extract frames 85-100 (where the killshot happens)
+                    # Extract frames - compensating for variable clip frame rate
                     if frame_number >= start_frame and (frame_number - start_frame) % stride == 0:
                         # Center crop with adaptive size
                         y, x, c = frame.shape
